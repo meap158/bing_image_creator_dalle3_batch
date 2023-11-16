@@ -1,6 +1,9 @@
 # **Bing Image Creator DALL-E 3 Batch v1.4**
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1eJE7Pl-5rsLpKF4xmCUgR6zaS4lP-wsT)
+<a target="_blank" href="https://colab.research.google.com/github/meap158/bing_image_creator_dalle3_batch/blob/main/bing_image_creator_dalle3_batch.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
 
+---
 ### **How to Obtain Bing Cookie**
 To use Bing Image Creator, you need to obtain the necessary cookie value. Follow these steps:
 
