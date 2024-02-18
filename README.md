@@ -4,7 +4,6 @@
 </a>
 
 ---
-
 ### **How to Obtain Bing Cookie**
 To use Bing Image Creator, you need to obtain the necessary cookie value. Follow these steps:
 
@@ -20,7 +19,6 @@ To use Bing Image Creator, you need to obtain the necessary cookie value. Follow
 ![image](https://github.com/meap158/bing_image_creator_dalle3_batch/assets/14327094/42ce0b74-94e0-4b70-a492-cabc7fb8e73a)
 
 ---
-
 ### **Okay now I have the `_U` cookie, where do I put it?**
 #### *Option 1. For single cookie use:*
 1. Just input your `_U` cookie value into the `bing_cookie` parameter.
@@ -44,8 +42,8 @@ To use Bing Image Creator, you need to obtain the necessary cookie value. Follow
 After this step, it should look something like this:
 
 ![secret](https://github.com/meap158/bing_image_creator_dalle3_batch/assets/14327094/062a9e57-ca73-4fed-ac1c-cd682819e422)
----
 
+---
 ### **How to Use**
 1. Fill in the necessary parameters: `spreadsheet_id`, `worksheet_name_or_index`, and `range_value`, as per your Google Sheets setup. The values from this specified range will be fetched and used as prompts.
 
