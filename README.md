@@ -16,30 +16,39 @@ To use Bing Image Creator, you need to obtain the necessary cookie value. Follow
 5. Under "Cookies," find and select `https://www.bing.com`.
 6. Look for the `_U` cookie.
 7. Copy the value of the `_U` cookie.
+![image](https://github.com/meap158/bing_image_creator_dalle3_batch/assets/14327094/42ce0b74-94e0-4b70-a492-cabc7fb8e73a)
+
 ---
 
-### **How to Use**
-#### *For single cookie use:*
+### **Okay now I have the `_U` cookie, where do I put it?**
+#### *Option 1. For single cookie use:*
 1. Just input your `_U` cookie value into the `bing_cookie` parameter.
 
-#### *For multi-cookie use:*
+![image](https://github.com/meap158/bing_image_creator_dalle3_batch/assets/14327094/9d5e5e6b-5cdf-4f9a-8f6a-65ae5e0e28e5)
+
+
+#### *Option 2. For multi-cookie use:*
 
 1. Create a Secret named `bing_cookies_yaml` in the Secrets tab (the one with the key icon):
+
 ![Screenshot 2024-02-18 163003](https://github.com/meap158/bing_image_creator_dalle3_batch/assets/14327094/d0eeac10-d2ff-4e3b-a8ae-7ac23397facf)
-3. Input your `_U` cookie value(s) into the Value column following this syntax (the names on the left side don't matter much as they're just for readability. You could put the names of your accounts there):
+
+2. Input your `_U` cookie value(s) into the Value column following this syntax (the names on the left side don't matter much as they're just for readability. You could put the names of your accounts there):
     ```
     account1: {_U cookie value}
 
     account2: {_U cookie value}
     ```
-4. Enable Notebook access to the Secret.
+3. Enable Notebook access to the Secret.
 After this step, it should look something like this:
 ![secret](https://github.com/meap158/bing_image_creator_dalle3_batch/assets/14327094/062a9e57-ca73-4fed-ac1c-cd682819e422)
-5. Fill in the necessary parameters: `spreadsheet_id`, `worksheet_name_or_index`, and `range_value`, as per your Google Sheets setup. The values from this specified range will be fetched and used as prompts.
-![configure_googlesheets](https://github.com/meap158/bing_image_creator_dalle3_batch/assets/14327094/15229257-8881-4339-ba8e-aa8508f36bfd)
 ---
 
-**Execution:** Press `Ctrl + F9` to run all cells.
+### **How to Use**
+1. Fill in the necessary parameters: `spreadsheet_id`, `worksheet_name_or_index`, and `range_value`, as per your Google Sheets setup. The values from this specified range will be fetched and used as prompts.
+
+![configure_googlesheets](https://github.com/meap158/bing_image_creator_dalle3_batch/assets/14327094/15229257-8881-4339-ba8e-aa8508f36bfd)
+2. Press `Ctrl + F9` to run all cells.
 
 ---
 ### **Results**
