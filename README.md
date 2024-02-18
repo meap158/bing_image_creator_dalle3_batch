@@ -1,4 +1,4 @@
-# **Bing Image Creator DALL-E 3 Batch v1.4**
+# **Bing Image Creator DALL-E 3**
 <a target="_blank" href="https://colab.research.google.com/github/meap158/bing_image_creator_dalle3_batch/blob/main/bing_image_creator_dalle3_batch.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
