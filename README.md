@@ -5,14 +5,18 @@
 <p align="center">
   <em>Batch generate images with Bing Image Creator (powered by DALL-E 3) using Seleniumbase.   </em>
 </p>
+
 <p align="center">
 <a target="_blank" href="https://colab.research.google.com/github/meap158/bing_image_creator_dalle3_batch/blob/main/bing_image_creator_dalle3_batch_meap158.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 </p>
+
+<p align="center">
 Bing Image Creator DALL-E 3 allows you to pull prompts directly from Google Sheets,
 generate images with DALL-E 3 in Copilot Designer,
 and save them directly to your Google Drive.
+</p>
 
 ---
 ### **How to Obtain Bing Cookie**
