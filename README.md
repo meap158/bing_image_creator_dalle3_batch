@@ -1,6 +1,6 @@
 # **Bing Image Creator DALL-E 3**
 <p align="center">
-  <img src="https://github.com/meap158/bing_image_creator_dalle3_batch/assets/14327094/9a7e95c9-8b62-45a4-9cb4-7671aef713a8" height="100" alt="Banner"/>
+  <img src="https://github.com/meap158/bing_image_creator_dalle3_batch/assets/14327094/9a7e95c9-8b62-45a4-9cb4-7671aef713a8" alt="Banner"/>
 </p>
 <p align="center">
   <em>Batch generate images with Bing Image Creator (powered by DALL-E 3) using Seleniumbase.   </em>
