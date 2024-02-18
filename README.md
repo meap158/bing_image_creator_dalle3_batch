@@ -16,6 +16,7 @@ To use Bing Image Creator, you need to obtain the necessary cookie value. Follow
 5. Under "Cookies," find and select `https://www.bing.com`.
 6. Look for the `_U` cookie.
 7. Copy the value of the `_U` cookie.
+   
 ![image](https://github.com/meap158/bing_image_creator_dalle3_batch/assets/14327094/42ce0b74-94e0-4b70-a492-cabc7fb8e73a)
 
 ---
@@ -41,6 +42,7 @@ To use Bing Image Creator, you need to obtain the necessary cookie value. Follow
     ```
 3. Enable Notebook access to the Secret.
 After this step, it should look something like this:
+
 ![secret](https://github.com/meap158/bing_image_creator_dalle3_batch/assets/14327094/062a9e57-ca73-4fed-ac1c-cd682819e422)
 ---
 
