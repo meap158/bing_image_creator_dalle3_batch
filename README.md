@@ -60,9 +60,10 @@ After this step, it should look something like this:
 
 ---
 ### **How to Use**
-1. Fill in the necessary parameters: `spreadsheet_id`, `worksheet_name_or_index`, and `range_value`, as per your Google Sheets setup. The values from this specified range will be fetched and used as prompts.
+1. Fill in the necessary parameters: `spreadsheet_id_or_url`, `worksheet_name_or_index`, and `range_value`, as per your Google Sheets setup. The values from this specified range will be fetched and used as prompts.
 
-![image](https://github.com/meap158/bing_image_creator_dalle3_batch/assets/14327094/add604d5-2a30-4774-95ac-2030c71b6951)
+![image](https://github.com/meap158/bing_image_creator_dalle3_batch/assets/14327094/9b6c38ea-b64f-4f91-ae62-c27360fd7291)
+
 2. Press `Ctrl + F9` to run all cells.
 
 ---
