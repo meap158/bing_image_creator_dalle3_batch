@@ -14,10 +14,10 @@
 # # ====================
 # # Usage example (from command line)
 # # Single prompt example:
-# bing_image_creator --prompts "a giant fish in the cloud, realistic" --cookie_value <your_cookie_value> --save_folder .
+# bing_image_creator "a giant fish in the cloud, realistic" --cookie_value <your_cookie_value> --save_folder .
 
 # # Multiple prompts example:
-# bing_image_creator --prompts "prompt 1" "prompt 2" --cookie_value <your_cookie_value> --save_folder .
+# bing_image_creator "prompt 1" "prompt 2" --cookie_value <your_cookie_value> --save_folder .
 
 # # ====================
 import os
