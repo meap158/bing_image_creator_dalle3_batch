@@ -13,4 +13,9 @@ setup(
         'piexif',
         'Pillow'
     ],
+    entry_points={
+        'console_scripts': [
+            'bing_image_creator = bing_image_creator:main',
+        ],
+    },
 )
