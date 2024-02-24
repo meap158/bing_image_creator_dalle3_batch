@@ -1,1 +1,1 @@
-# __init__.py
+from .bing_image_creator import BingImageCreator
