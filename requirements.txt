@@ -1,0 +1,4 @@
+requests
+seleniumbase
+piexif
+Pillow
