@@ -15,7 +15,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'bing_image_creator = bing_image_creator:main',
+            'bing_image_creator = bing_image_creator.cli:main',
         ],
     },
 )
