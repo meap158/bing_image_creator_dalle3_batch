@@ -1,5 +1,9 @@
 # Usage Examples: Bing Image Creator
+```bash
+pip install git+https://github.com/meap158/bing_image_creator_dalle3_batch
+```
 
+---
 ## From Another File (as a package):
 ```python
 import os
