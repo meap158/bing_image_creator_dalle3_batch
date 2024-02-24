@@ -1,3 +1,4 @@
+# # ====================
 # # Usage example (from another file)
 # import os
 # from bing_image_generator import BingImageCreator
@@ -9,13 +10,22 @@
 #                                  save_folder=".",
 #                                  cookie_value=cookie)
 # image_creator.run()
-# ====================
 
+# # ====================
+# # Usage example (from command line)
+# # Single prompt example:
+# bing_image_creator --prompts "a giant fish in the cloud, realistic" --cookie_value <your_cookie_value> --save_folder .
+
+# # Multiple prompts example:
+# bing_image_creator --prompts "prompt 1" "prompt 2" --cookie_value <your_cookie_value> --save_folder .
+
+# # ====================
 import os
 import random
 import string
 import time
 import requests
+import argparse
 
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -298,6 +308,7 @@ class BingImageCreator:
     def run(self):
         try:
             for prompt in self.prompts:
+                print()
                 print_colored_text(prompt, "black")
                 print("Save folder:", os.path.abspath(self.save_folder))
                 self.navigate_to_bing_create_page()
@@ -318,3 +329,18 @@ class BingImageCreator:
             print(f"Error: {e}")
         finally:
             self.driver.quit()
+
+
+def main():
+    parser = argparse.ArgumentParser(description='CLI for Bing Image Creator')
+    parser.add_argument('prompts', nargs='+', help='Prompts for image generation')
+    parser.add_argument('--cookie', '-c', help='_U cookie value for authentication')
+    parser.add_argument('--save-folder', '-s', default='images', help='Folder to save generated images')
+    args = parser.parse_args()
+
+    image_creator = BingImageCreator(args.prompts, args.cookie, args.save_folder)
+    image_creator.run()
+
+
+if __name__ == "__main__":
+    main()
