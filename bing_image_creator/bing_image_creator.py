@@ -144,6 +144,65 @@ class BingImageCreator:
             print(f"Error: {e}")
             return False
 
+    def refresh_and_recheck(self, timeout=10):
+        # 0. Check if the "Your images are on the way" popup exists
+        try:
+            elements = self.driver.find_elements(By.CSS_SELECTOR, 'div.gi_nb.gi_nb_r.show_n')
+            if elements:
+                popup_text = elements[0].text.replace("\n", ". ")
+                print_colored_text(f"Popup found: {popup_text}", "yellow")
+                timeout = 150  # Change the timeout if the popup is found
+        except:
+            pass
+        print("Refreshing and rechecking for the loader.")
+        self.driver.refresh()
+        time.sleep(3)
+        # 1. Check if not class="girr_blocked"
+        try:
+            WebDriverWait(self.driver, timeout).until_not(
+                EC.presence_of_element_located((By.CSS_SELECTOR, '#girrcc > div:first-child.girr_blocked'))
+            )
+            print("The first child div does not have class 'girr_blocked'")
+        except Exception as e:
+            print(f"The first child div has class 'girr_blocked': {e}")
+            return False
+        # 2. Check if not imgcount="0"
+        unwanted_element = '.girr_set.seled[data-imgcount="0"]'
+        try:
+            WebDriverWait(self.driver, timeout).until_not(
+                EC.presence_of_element_located((By.CSS_SELECTOR, unwanted_element))
+            )
+            print("The image count is greater than 0.")
+            return True
+        # Handle timeout by refreshing the page and trying again
+        except TimeoutException:
+            print("Timeout exceeded. Refreshing the page and trying again.")
+            self.driver.refresh()
+            time.sleep(3)
+            try:
+                # Check if not class="gislowtlt" (Your images are currently in progress)
+                WebDriverWait(self.driver, timeout).until_not(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, 'div#giloadhelpc > div.gislowtlt'))
+                )
+                timeout = 150  # Change the timeout if the loader is found
+            except:
+                pass
+            try:
+                # Wait again after refresh
+                WebDriverWait(self.driver, timeout).until_not(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, unwanted_element))
+                )
+                print("The image count is greater than 0 after refresh.")
+                return True
+            # Handle timeout after refresh
+            except TimeoutException:
+                print("Timeout exceeded after refresh. The image count is still 0.")
+                return False
+        # Handle other exceptions
+        except Exception as e:
+            print(f"Error: {e}")
+            return False
+
     @staticmethod
     def remove_middle_text(text, max_length, indicator="___"):
         """
@@ -237,56 +296,6 @@ class BingImageCreator:
             print_colored_text(f'Prompt saved to "{prompt_file_path}".', 'green')
         except Exception as e:
             print(f"Error: {e}")
-
-    def refresh_and_recheck(self, timeout=10):
-        # 0. Check if the "Your images are on the way" popup exists
-        try:
-            elements = self.driver.find_elements(By.CSS_SELECTOR, 'div.gi_nb.gi_nb_r.show_n')
-            if elements:
-                popup_text = elements[0].text.replace("\n", ". ")
-                print_colored_text(f"Popup found: {popup_text}", "yellow")
-                timeout = 150  # Change the timeout if the popup is found
-        except:
-            pass
-        print("Refreshing and rechecking for the loader.")
-        self.driver.refresh()
-        time.sleep(3)
-        # 1. Check if not class="girr_blocked"
-        try:
-            WebDriverWait(self.driver, timeout).until_not(
-                EC.presence_of_element_located((By.CSS_SELECTOR, '#girrcc > div:first-child.girr_blocked'))
-            )
-            print("The first child div does not have class 'girr_blocked'")
-        except Exception as e:
-            print(f"The first child div has class 'girr_blocked': {e}")
-            return False
-        # 2. Check if not imgcount="0"
-        unwanted_element = '.girr_set.seled[data-imgcount="0"]'
-        try:
-            WebDriverWait(self.driver, timeout).until_not(
-                EC.presence_of_element_located((By.CSS_SELECTOR, unwanted_element))
-            )
-            print("The image count is greater than 0.")
-            return True
-        # Handle timeout by refreshing the page and trying again
-        except TimeoutException:
-            print("Timeout exceeded. Refreshing the page and trying again.")
-            self.driver.refresh()
-            try:
-                # Wait again after refresh
-                WebDriverWait(self.driver, timeout).until_not(
-                    EC.presence_of_element_located((By.CSS_SELECTOR, unwanted_element))
-                )
-                print("The image count is greater than 0 after refresh.")
-                return True
-            # Handle timeout after refresh
-            except TimeoutException:
-                print("Timeout exceeded after refresh. The image count is still 0.")
-                return False
-        # Handle other exceptions
-        except Exception as e:
-            print(f"Error: {e}")
-            return False
 
     @staticmethod
     def add_description_to_image(file_path, description):
