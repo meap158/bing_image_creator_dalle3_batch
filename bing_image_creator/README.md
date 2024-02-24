@@ -1,7 +1,6 @@
 # Usage Examples: Bing Image Creator
 
-## From Another File (as a package)
-
+## From Another File (as a package):
 ```python
 import os
 from bing_image_creator import BingImageCreator
@@ -18,12 +17,12 @@ image_creator.run()
 ---
 ## From Command Line
 
-### *Single Prompt Example*:
+#### *Single Prompt Example*:
 ```bash
 bing_image_creator "a giant fish in the cloud, realistic" --cookie_value <your_cookie_value> --save_folder .
 ```
 
-### *Multiple Prompts Example*:
+#### *Multiple Prompts Example*:
 ```bash
 bing_image_creator "prompt 1" "prompt 2" --cookie_value <your_cookie_value> --save_folder .
 ```
