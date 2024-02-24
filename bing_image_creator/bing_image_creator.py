@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # # ====================
 # # Usage example (from another file)
 # import os
@@ -25,7 +27,6 @@ import random
 import string
 import time
 import requests
-import argparse
 
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -329,18 +330,3 @@ class BingImageCreator:
             print(f"Error: {e}")
         finally:
             self.driver.quit()
-
-
-def main():
-    parser = argparse.ArgumentParser(description='CLI for Bing Image Creator')
-    parser.add_argument('prompts', nargs='+', help='Prompts for image generation')
-    parser.add_argument('--cookie', '-c', help='_U cookie value for authentication')
-    parser.add_argument('--save-folder', '-s', default='images', help='Folder to save generated images')
-    args = parser.parse_args()
-
-    image_creator = BingImageCreator(args.prompts, args.cookie, args.save_folder)
-    image_creator.run()
-
-
-if __name__ == "__main__":
-    main()
